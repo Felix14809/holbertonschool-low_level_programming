@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/* more headers goes there */
-
-/* main - declares the int "n" and "l"
- * 
+/**
+ * main - declares the int "n" and "l"
  * prints different messages
  * based on the number assigned to "l"
  *
@@ -17,7 +15,8 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	l = n % 10;
-	if ( l > 5)
+	
+	if (l > 5)
 	{
 		printf("Last digit of %d is %d and is greater than 5\n", n, l);
 	}
