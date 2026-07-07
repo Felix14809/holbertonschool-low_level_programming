@@ -1,4 +1,5 @@
-#include<stdio.h>
+#include <stdlib.h>
+#include <time.h>
 /**
  * main - declares the int "n" includes an if else function
  * prints different messages and the variable
@@ -7,9 +8,12 @@
  * Return is set back to 0
  */
 
-main()
+int main(void)
 {
 	int n;
+
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
 	
 	if (n>0)
 	{
