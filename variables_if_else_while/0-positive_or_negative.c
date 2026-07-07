@@ -6,7 +6,7 @@
  * prints different messages and the variable
  * based on the number assigned to "n"
  *
- * Return is set back to 0
+ * Return: is set back to 0
  */
 
 int main(void)
