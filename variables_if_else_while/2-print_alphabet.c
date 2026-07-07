@@ -16,6 +16,6 @@ int main(void)
 	{
 		a++;
 		putchar(a);
-	}while(a !='z')
+	}while(a !='z');
 	return (0);
 }
