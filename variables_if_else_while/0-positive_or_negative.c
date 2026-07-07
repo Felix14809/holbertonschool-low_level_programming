@@ -1,6 +1,6 @@
 #include<stdio.h>
 /**
- * main - includes an if else function
+ * main - declares the int "n" includes an if else function
  * prints different messages and the variable
  * based on the number assigned to "n"
  *
@@ -9,6 +9,8 @@
 
 main()
 {
+	int n;
+	
 	if (n>0)
 	{
 		printf("%d\n is positive\n", n);
