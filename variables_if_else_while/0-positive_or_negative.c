@@ -1,4 +1,4 @@
-#inlcude<stdio.h>
+#include<stdio.h>
 /**
  * main - includes an if else function
  * prints different messages and the variable
