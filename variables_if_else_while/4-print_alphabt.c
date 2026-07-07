@@ -12,9 +12,9 @@ int main(void)
 
 	while (lower <= 'z')
 	{
-		if(lower !='e,q')
+		if(lower != 'e', lower != 'q')
 		{
-			putchar(lower):
+			putchar(lower);
 		}
 
 		lower++;
