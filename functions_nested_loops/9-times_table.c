@@ -22,7 +22,7 @@ void times_table(void)
 				_putchar(total / 10 + '0');
 				_putchar(total % 10 + '0');
 			}
-			else if (total < 10 && dig1 != 0)
+			else if ((total < 10 && dig1 != 0) || (dig1 != 0 && dig2 >= 0))
 			{
 				_putchar(' ');
 				_putchar(total + '0');
