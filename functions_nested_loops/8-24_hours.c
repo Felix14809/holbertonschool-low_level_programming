@@ -9,7 +9,7 @@ void jack_bauer(void)
 	char hour1 = '0';
 	char hour2 = '0';
 
-	while (hour1 == '2' && hour2 < '4' || hour1 < '2' && hour2 <= '9')
+	while (((hour1 == '2' && hour2 < '4')) || (hour1 < '2' && hour2 <= '9'))
 	{
 		char minute1 = '0';
 		char minute2 = '0';
