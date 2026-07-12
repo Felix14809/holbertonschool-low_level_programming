@@ -21,5 +21,6 @@ void print_diagonal(int n)
 		_putchar('\n');
 		lines++;
 	}
-	_putchar('\n');
+	if (size < 1)
+		_putchar('\n');
 }
