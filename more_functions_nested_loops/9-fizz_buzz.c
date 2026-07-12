@@ -1,4 +1,4 @@
-#inlcude "main.h"
+#include "main.h"
 #include <stdio.h>
 /**
  * main - prints numbers 1-100 while replacing multitdues of 3 and 5
