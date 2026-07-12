@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _isalpha - checks for uppercase alphabetical character
+ * _isupper - checks for uppercase alphabetical character
  * @c: declared as an integer to be checked
  *
  * Return: 1 if c is an upper, if not 0
