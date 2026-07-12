@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _isalpha - checks for digits
+ * _isdigit - checks for digits
  * @c: declared as an integer to be checked
  *
  * Return: 1 if c is a digit, if not 0

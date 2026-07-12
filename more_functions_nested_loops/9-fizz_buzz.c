@@ -1,11 +1,10 @@
-#inlcude "main.h"
 #include <stdio.h>
 /**
  * main - prints numbers 1-100 while replacing multitdues of 3 and 5
  *
  * Return: void
  */
-void fizz_buzz(void)
+int main(void)
 {
 	int number = 1;
 
@@ -34,5 +33,6 @@ void fizz_buzz(void)
 		number++;
 	}
 	putchar('\n');
+	return (0);
 }
 

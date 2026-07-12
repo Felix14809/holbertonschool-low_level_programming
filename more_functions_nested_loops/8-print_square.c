@@ -19,7 +19,8 @@ void print_square(int size)
 			side2++;
 		}
 		_putchar('\n');
-		side1++ ;
+		side1++;
 	}
-	_putchar('\n');
+	if (size < 1)
+		_putchar('\n');
 }
