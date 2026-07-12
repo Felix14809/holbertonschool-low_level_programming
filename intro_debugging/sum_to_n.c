@@ -6,7 +6,7 @@ int sum_to_n(int n)
 
     for (i = 1; i <= n; i++)
         sum += i;
-    return n;
+    return sum;
 }
 int main(void)
 {
