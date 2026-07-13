@@ -20,3 +20,6 @@ Single-pass algorithm time: 0.000028 seconds
 
 Naive time / single-pass time- 905000/29 = ~31000
 Naive algorithm implementation is ~ 31000 times slower than single pass algorithm
+
+~0.00000145 seconds per 1000 iterations for naive algorithm
+~0.00000112 seconds per 1000 iterations for single pass which is ~23% faster
