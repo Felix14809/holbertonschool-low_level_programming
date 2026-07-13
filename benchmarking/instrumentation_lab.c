@@ -67,7 +67,7 @@ int main(void)
         printf("impossible\n");
     total = clock();
     time_used = (float) (total - start) / CLOCKS_PER_SEC;
-    printf("Total seconds: %.6f\n", time_used);
+    printf("TOTAL seconds: %.6f\n", time_used);
     time_used = (float) (build - start) / CLOCKS_PER_SEC;
     printf("BUILD_DATA seconds: %.6f\n", time_used);
     time_used = (float) (process - build) / CLOCKS_PER_SEC;
