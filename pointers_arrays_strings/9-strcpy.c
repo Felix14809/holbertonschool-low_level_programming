@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * _strcpy - copies the src to dest
+ * *_strcpy - copies the src to dest
  * @dest: the character pointed to
  * @src: what to copy to dest
  *
@@ -16,7 +16,7 @@ char *_strcpy(char *dest, char *src)
 	i = 0;
 	while (src[i])
 		i++;
-	while (i >= 0)            
+	while (i >= 0)
 	{
 		dest[i] = src[i];
 		i--;
