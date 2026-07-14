@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * *_strncopy - appends
+ * *_strncpy - appends
  * @dest: the character pointed to
  * @src: what to append to dest
  * @n: the limiter
