@@ -8,23 +8,19 @@
 char *cap_string(char *a)
 {
 	char *start;
+	int new_word;
 
 	start = a;
-	while (*a)
-	{	
-		if (*a >= 'a' && *a <= 'z')
-		{
-			a--;
-				if ((*a < 'a' || *a > 'z') && (*a < 'A' || *a > 'Z'))
-				{
-					a++;
-					*a = *a - ' ';
+	new_word = 1;
 
-				}
-			a++;
-		}
-		while (*a >= 'a' && *a <= 'z')
-			a++;
+	while (*a)
+	{
+		if (new_word && *a >= 'a' && *a <= 'z')
+			*a = *a - 32;
+		if (*a == ' ' || *a == '\t' || *a == '\n')
+			new_word = 1;
+		else
+			new_word = 0;
 		a++;
 	}
 	return (start);
