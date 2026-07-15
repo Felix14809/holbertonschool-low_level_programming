@@ -17,7 +17,7 @@ char *cap_string(char *a)
 	{
 		if (new_word && *a >= 'a' && *a <= 'z')
 			*a = *a - 32;
-		if (*a == ' ' || *a == '\t' || *a == '\n')
+		if (*a == ' ' || *a == '\t' || *a == '\n' || *a == '.')
 			new_word = 1;
 		else
 			new_word = 0;
