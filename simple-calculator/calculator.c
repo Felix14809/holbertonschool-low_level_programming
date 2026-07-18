@@ -8,36 +8,47 @@
  */
 int main(void)
 {
-	/*float a, b, sum;*/
-	int option, fail;
+	float a, b, sum;
+	int option;
 	
-	fail = 3;
-	printf("Choose how you want to calculate your numbers \n1) Addition\n2) Subtract\n3) Multiply\n4) Divide\n5) Exit\n");
-	while (fail >= 0)
+	printf("Choose how you want to calculate your numbers \n1) Add\n2) Subtract\n3) Multiply\n4) Divide\n5) Exit\n");
+	while (scanf("%d", &option) != 1 || option < 1 || option > 5)
 	{
-		scanf("%d", &option);
-		printf("You choice is ");
-		if (option != 1 && option != 2 && option != 3 && option != 4 && option != 5)
-		{
-			while (getchar() != '\n')
-    			;
-				if (fail == 0){
-					printf("invalid input, exiting..\n");
-					return (0);
-				}
-			printf("an invalid choice, you have %d tries left\n", fail);
-			fail--;
-		}
-		else if (option == 1)
-			printf("addition\n");
-		else if (option == 2)
-			printf("subtraction\n");
-		else if (option == 3)
-			printf("multiplication\n");
-		else if (option == 4)
-			printf("division\n");
-		else if (option == 5)
-			printf("5. Bye!\n");
+		while (getchar() != '\n')
+    		;
+		printf("Invalid input. Try again or enter 5 to exit\n");
 	}	
+	if (option == 5)
+	{
+		printf("Bye for now!");
+		return (0);
+	}
+	else 
+		printf("You choice is: %d\nEnter two numbers separated by a space:", option);	
+	while (scanf("%f %f", &a, &b) != 2)
+	{
+		while (getchar() != '\n')
+    			;
+			printf("Invalid input. Try again or press Ctrl + C to terminate\n");
+	}
+	if (option == 1)
+		sum = a + b;
+	else if (option == 2)
+		sum = a - b;
+	else if (option == 3)
+		sum = a * b;
+	else if (option == 4)
+	{	
+		if (b == 0)
+		{
+			printf("ERROR: division by 0\n");
+			return (0);
+		}
+		sum = a / b;	
+	}
+	if (sum == (int)sum)
+		printf("Result: %d\n", (int)sum);
+	else
+		printf("Result: %.2f\n", sum);
 	return (0);
 }
