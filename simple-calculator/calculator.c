@@ -18,7 +18,7 @@ int main(void)
 	}
 	if (option == 5)
 	{
-		printf("Bye for now!");
+		printf("Bye for now!\n");
 		return (0);
 	}
 	else
