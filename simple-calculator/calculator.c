@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - A simple terminal calculator 
+ * main - A simple terminal calculator
  *
  * Return: void
  */
@@ -9,7 +9,7 @@ int main(void)
 	float a, b, sum;
 	int option;
 
-	printf("Choose how you want to calculate your numbers \n1) Add\n2) Subtract\n3) Multiply\n4) Divide\n5) Exit\n");
+	printf("Choose calculation method\n1 Add\n2 Subtract\n3 Multiply\n4 Divide\n5 Exit\n");
 	while (scanf("%d", &option) != 1 || option < 1 || option > 5)
 	{
 		while (getchar() != '\n')
@@ -22,7 +22,7 @@ int main(void)
 		return (0);
 	}
 	else
-		printf("You chose: %d\nEnter two numbers separated by a space:", option);
+		printf("You chose: %d\nEnter two numbers separated by a space: ", option);
 	while (scanf("%f %f", &a, &b) != 2)
 	{
 		while (getchar() != '\n')
