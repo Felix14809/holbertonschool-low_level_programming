@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * free grid - function that frees memory held by a 2d array
+ * free_grid - function that frees memory held by a 2d array
  * @grid: the 2d arrays column
  * @height: rows of the array
  *
@@ -15,8 +15,8 @@ void free_grid(int **grid, int height)
 		return;
 	while (i < height)
 	{
-		free (grid[i]);
+		free(grid[i]);
 		i++;
 	}
-	free (grid);
+	free(grid);
 }
