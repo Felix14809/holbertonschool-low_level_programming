@@ -1,5 +1,5 @@
 #include "dog.h"
-#inlcude <stdlib.h>
+#include <stdlib.h>
 /**
  * init_dog - use dog structure
  * @d: the passed structure
