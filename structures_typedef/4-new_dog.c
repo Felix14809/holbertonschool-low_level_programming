@@ -6,13 +6,13 @@
  * @age: age of dog
  * @owner: owner of dog
  *
- * Return: pointer to new struct, or NULL 
+ * Return: pointer to new struct, or NULL
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d;
 	int i, len;
-	
+
 	d = malloc(sizeof(dog_t));
 	if (d == NULL)
 		return (NULL);
