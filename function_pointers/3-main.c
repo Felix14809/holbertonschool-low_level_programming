@@ -11,17 +11,17 @@ int main(int argc, char *argv[])
 	
 	if (argc != 4)
 	{
-		printf("ERROR\n");
+		printf("Error\n");
 		return (98);
 	}
 	else if (*argv[2] != '+' && *argv[2] != '-' && *argv[2] != '*' && *argv[2] != '/' && *argv[2] != '%')
 	{
-		printf("ERROR\n");
+		printf("Error\n");
 		return (99);
 	}
 	else if ((*argv[2] == '/' || *argv[2] == '%') && *argv[3] == 0)
 	{
-		printf("ERROR\n");
+		printf("Error\n");
 		return (100);
 	}
 	a = atoi(argv[1]);
