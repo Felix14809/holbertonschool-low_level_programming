@@ -16,8 +16,8 @@ void print_all(const char * const format, ...)
 	len = 0;
 	if (format == NULL)
 	{
-		print("\n");
-		return (0);
+		printf("\n");
+		return;
 	}
 	while (format[len])
 		len++;
