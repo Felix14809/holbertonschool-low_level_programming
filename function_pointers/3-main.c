@@ -8,14 +8,13 @@
 int main(int argc, char *argv[])
 {
 	int a, b, result;
-
+	
 	if (argc != 4)
 	{
 		printf("ERROR\n");
 		return (98);
 	}
-	else if (*argv[2] != '+' || *argv[2] != '-' ||
-		 *argv[2] != '*' || *argv[2] != '/' || *argv[2] != '%')
+	else if (*argv[2] != '+' && *argv[2] != '-' && *argv[2] != '*' && *argv[2] != '/' && *argv[2] != '%')
 	{
 		printf("ERROR\n");
 		return (99);
