@@ -2,7 +2,7 @@
 #include "dog.h"
 /**
  * print_dog - prints a structure
- * @dog *d: the structure passed
+ * @d: the structure passed
  *
  * Return: 
  */
