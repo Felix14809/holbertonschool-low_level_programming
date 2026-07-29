@@ -20,18 +20,11 @@ void print_s(va_list ap)
 void print_all(const char * const format, ...)
 {
 	va_list ap;
-	unsigned int i, j, len;
+	unsigned int i, j;
 
-	len = 0, i = 0;
-	if (format == NULL)
-	{
-		printf("\n");
-		return;
-	}
-	while (format[len])
-		len++;
+	i = 0;
 	va_start(ap, format);
-	while (i < len)
+	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
 		switch (format[i])
@@ -54,7 +47,7 @@ void print_all(const char * const format, ...)
 				break;
 		}
 		i++;
-		if (i != len && j == 1)
+		if (format[i] != '\0' && j == 1)
 			printf(", ");
 	}
 	va_end(ap);
