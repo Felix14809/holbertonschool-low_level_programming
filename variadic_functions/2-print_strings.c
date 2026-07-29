@@ -17,7 +17,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_start(ap, n);
 	while (i < n)
 	{
-		i++;
 		str = va_arg(ap, char *);
 		if (str == NULL)
 		{
@@ -28,6 +27,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		{
 			printf("%s", str);
 		}
+		i++;
 		if (i == n)
 			break;
 		if (separator != NULL)
