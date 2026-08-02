@@ -12,7 +12,7 @@ void print_all(const char * const format, ...)
 
 	i = 0;
 	va_start(ap, format);
-	while (format != NULL && format[i] != '\0')
+	while (format != NULL && format[i])
 	{
 		j = 0;
 		switch (format[i])
@@ -37,7 +37,7 @@ void print_all(const char * const format, ...)
 				break;
 		}
 		i++;
-		if (format[i] != '\0' && j == 1)
+		if (format[i] && j == 1)
 			printf(", ");
 	}
 	va_end(ap);
