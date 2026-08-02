@@ -9,5 +9,5 @@ int main(int argc, char *argv[])
 {
 	if (*argv)
 		printf("%d\n", argc);
-	return (argc);
+	return (1);
 }

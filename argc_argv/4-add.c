@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
 	int i = 1, sum = 0;
 
-	while (argv[i])
+	while (i != argc)
 	{
 		if (atoi(argv[i]) == 0)
 		{
@@ -21,5 +21,5 @@ int main(int argc, char *argv[])
 
 	}
 	printf("%d\n", sum);
-	return (argc);
+	return (1);
 }

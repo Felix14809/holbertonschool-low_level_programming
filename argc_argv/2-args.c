@@ -14,5 +14,5 @@ int main(int argc, char *argv[])
 		printf("%s\n", argv[argc - argc + i]);
 		i++;
 	}
-	return (argc);
+	return (1);
 }
