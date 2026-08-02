@@ -3,11 +3,11 @@
  * main - prints the number of arguments passed
  *@argc: number of arguments passed
  *@argv: the value of the passed arguments
- * Return: int argc
+ * Return: int
 */
 int main(int argc, char *argv[])
 {
 	if (*argv)
 		printf("%d\n", argc);
-	return (1);
+	return (0);
 }

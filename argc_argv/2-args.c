@@ -3,7 +3,7 @@
  * main - prints the arguments passed
  *@argc: number of arguments passed
  *@argv: the value of the passed arguments
- * Return: int argc
+ * Return: int
 */
 int main(int argc, char *argv[])
 {
@@ -14,5 +14,5 @@ int main(int argc, char *argv[])
 		printf("%s\n", argv[argc - argc + i]);
 		i++;
 	}
-	return (1);
+	return (0);
 }
