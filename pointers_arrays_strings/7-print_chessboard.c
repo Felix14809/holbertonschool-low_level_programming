@@ -2,7 +2,6 @@
 /**
 * print_chessboard - prinst a 2d array
 * @a: pointer to arrays
-* @8: elements per array
 *
 * Return: void
 */

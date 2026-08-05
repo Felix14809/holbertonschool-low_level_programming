@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* *_strbrk - returns pointer to the first matching char in the string
+* *_strpbrk - returns pointer to the first matching char in the string
 * @s: pointer to string
 * @accept: pointer to string
 *
