@@ -1,6 +1,13 @@
 #ifndef MAIN_H
 
 #define MAIN_H
+#include <stdlib.h>
+#include <stdio.h>
+#include <stddef.h>
+#include <unistd.h>
+#include <stdarg.h>
+#include <limits.h>
+#include <string.h>
 
 int _putchar(char c);
 void print_alphabet(void);
@@ -47,5 +54,12 @@ char *cap_string(char *);
 char *leet(char *);
 char *_memset(char *s, char b, unsigned int n);
 void print_diagsums(int *a, int size);
+unsigned int _strspn(char *s, char *accept);
+char *_strchr(char *s, char c);
+char *_memcpy(char *dest, char *src, unsigned int n);
+unsigned int _strspn(char *s, char *accept);
+char *_strpbrk(char *s, char *accept);
+char *_strstr(char *haystack, char *needle);
+void print_chessboard(char (*a)[8]);
 
 #endif
