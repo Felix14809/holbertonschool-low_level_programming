@@ -7,9 +7,17 @@
 */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	unsigned long int hash = hash_djb2((const unsigned char *)key) % ht->size;
+	unsigned long int hash;
+	hash_node_t *node;
 
-	if (ht->array[hash] != NULL)
-		return (ht->array[hash]->value);
-	return (NULL);
+	if (key != NULL)
+		hash = hash_djb2((const unsigned char *)key) % ht->size;
+	if (ht->array[hash] == NULL)
+		return (NULL);
+	node = ht->array[hash];
+	while (node->key != key)
+	{
+		node = node->next;
+	}
+	return (node->value);
 }
