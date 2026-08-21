@@ -20,7 +20,7 @@ int powrec(int x, int y)
 */
 int _sqrt_recursion(int n)
 {
-	int i = 1;	
+	int i = 1;
 
 	while (i <= n)
 	{

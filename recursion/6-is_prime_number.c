@@ -21,9 +21,8 @@ int powrec(int x, int y)
 */
 int sqrtrecursion(int n)
 {
-	int i = 1;	
+	int i = 1;
 
-	
 	while (i <= n)
 	{
 		if (powrec(i, 2) == n)
@@ -42,10 +41,10 @@ int sqrtrecursion(int n)
 int is_prime_number(int n)
 {
 	int prime, i = 2;
-	
+
 	if (n < 2)
 		return (0);
-	prime = sqrtrecursion (n);
+	prime = sqrtrecursion(n);
 	while (i <= prime)
 	{
 		if (n % i == 0)
