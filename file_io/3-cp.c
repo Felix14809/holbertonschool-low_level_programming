@@ -1,29 +1,28 @@
 #include "main.h"
 /**
- * copy_file - copies buffer into filename, creating it if needed
- * @file: name of the destination file
- * @buffer: buffer of text to write to the file
- * Return: 1 on success, otherwise -1
+ * copy_file - copies buffer into file, creating it if needed
+ * @fdfrom: fd of file to copy
+ * @file: file to create and write to
+ * Return: 0 or error codes
  */
 int copy_file(int fdfrom, char *file)
 {
 	int fdto;
-	ssize_t ltrsread, wrresult = 0;
+	ssize_t ltrsread = 1, wrresult = 0;
 	char buffer[1024];
 
 	fdto = open(file, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fdto == -1)
 		return (-1);
-	ltrsread = read(fdfrom, buffer, 1024);
+	
 	while (ltrsread > 0)
 	{	
+		ltrsread = read(fdfrom, buffer, 1024);
+		if (ltrsread == -1)
+			return (98);
 		wrresult = write(fdto, buffer, ltrsread);
 		if (wrresult == -1)
 			return (-1);
-	}
-	if (ltrsread == -1)
-	{
-		return (98);
 	}
 	if (close(fdto) == -1)
 	{
@@ -32,13 +31,12 @@ int copy_file(int fdfrom, char *file)
 	}
 	return (0);
 }
-
 /**
  * main - copies the content of one file into another
  * @ac: argument count
  * @av: array of argument strings
  *
- * Return: 1 on success, or the relevant error code
+ * Return: 0 on success, or the relevant error code
  */
 int main(int ac, char **av)
 {
