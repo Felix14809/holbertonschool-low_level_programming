@@ -15,9 +15,8 @@ int copy_file(int fdfrom, char *file)
 	if (fdto == -1)
 		return (-1);
 
-	while (ltrsread > 0)
+	while ((ltrsread = read(fdfrom, buffer, 1024)) > 0)
 	{
-		ltrsread = read(fdfrom, buffer, 1024);
 		if (ltrsread == -1)
 			return (98);
 		wrresult = write(fdto, buffer, ltrsread);
