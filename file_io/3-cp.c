@@ -14,9 +14,9 @@ int copy_file(int fdfrom, char *file)
 	fdto = open(file, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fdto == -1)
 		return (-1);
-	
+
 	while (ltrsread > 0)
-	{	
+	{
 		ltrsread = read(fdfrom, buffer, 1024);
 		if (ltrsread == -1)
 			return (98);
@@ -41,7 +41,7 @@ int copy_file(int fdfrom, char *file)
 int main(int ac, char **av)
 {
 	int fd, result;
-	
+
 	if (ac != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
@@ -50,7 +50,7 @@ int main(int ac, char **av)
 	fd = open(av[1], O_RDONLY);
 	if (fd == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", av[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 	result = copy_file(fd, av[2]);
@@ -61,7 +61,7 @@ int main(int ac, char **av)
 	}
 	if (result == 98)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", av[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 	if (close(fd) == -1)
