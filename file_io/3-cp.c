@@ -1,16 +1,18 @@
 #include "main.h"
 /**
-*copy_file - copys a file if it doesnt exist and writes to it
-*@filename: name of the file
-*@text_content: number of characters to read
-*Return: 1 on success otherwise -1
-*/
-int copy_file(const char *filename, char *text_content)
+ * copy_file - copies text_content into filename, creating it if needed
+ * @file: name of the destination file
+ * @text_content: buffer of text to write to the file
+ * Return: 1 on success, otherwise -1
+ */
+int copy_file(const char *file, char *text_content)
 {
+	static int firstwrite = 1;
 	int fd, len = 0;
 	ssize_t wrresult = 0;
 
-	fd = open(filename, O_WRONLY | O_CREAT | O_APPEND, 0664);
+	fd = open(file, O_WRONLY | O_CREAT | (firstwrite ? O_TRUNC : O_APPEND), 0664);
+	firstwrite = 0;
 	if (fd == -1)
 		return (-1);
 	if (text_content != NULL)
@@ -23,12 +25,14 @@ int copy_file(const char *filename, char *text_content)
 	close(fd);
 	return (1);
 }
+
 /**
-*cpy - copies content of one file to another
-*@ac: argument count
-*@av: array of pointer to passed files
-*Return: 1 or error code
-*/
+ * main - copies the content of one file into another
+ * @ac: argument count
+ * @av: array of argument strings
+ *
+ * Return: 1 on success, or the relevant error code
+ */
 int main(int ac, char **av)
 {
 	int fd, result;
@@ -50,13 +54,7 @@ int main(int ac, char **av)
 	if (buffer == NULL)
 		return (0);
 	while ((ltrsread = read(fd, buffer, 1024)) > 0)
-	{
-		if (ltrsread == -1)
-		{
-			free(buffer);
-			dprintf(STDERR_FILENO, "Error: Can't read from %s\n", av[2]);
-			exit(98);
-		}
+	{	buffer[ltrsread] = '\0';
 		result = copy_file(av[2], buffer);
 		if (result == -1)
 		{
@@ -64,11 +62,17 @@ int main(int ac, char **av)
 			exit(98);
 		}
 	}
+	if (ltrsread == -1)
+	{
+		free(buffer);
+		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", av[1]);
+		exit(98);
+	}
 	if (close(fd) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd);
 		exit(100);
 	}
 	free(buffer);
-	return (1);
+	return (0);
 }
