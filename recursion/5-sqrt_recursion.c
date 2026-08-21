@@ -1,17 +1,17 @@
 #include "main.h"
 /**
-* _pow_recursion - calculates x to the power of y
-*@x: the number
-*@y: the power
+* powrec - calculates the root of y
+*@n: the number
+*@x: the checker
 *Return: int
 */
-int powrec(int x, int y)
+int powrec(int n, int x)
 {
-	if (y < 0)
+	if (n == x * x)
+		return (x);
+	if (x * x > n)
 		return (-1);
-	if (y == 0)
-		return (1);
-	return (x * powrec(x, y - 1));
+	return (powrec(n, x + 1));
 }
 /**
 * _sqrt_recursion - calculates the root of n
@@ -20,15 +20,7 @@ int powrec(int x, int y)
 */
 int _sqrt_recursion(int n)
 {
-	int i = 1;
+	int root = powrec(n, 1);
 
-	while (i <= n)
-	{
-		if (powrec(i, 2) == n)
-		{
-		return (i);
-		}
-		i++;
-	}
-	return (-1);
+	return (root);
 }
